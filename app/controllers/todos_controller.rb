@@ -9,15 +9,10 @@ class TodosController < ApplicationController
   end
 
   def show
-    begin
+    if Todo.exists?(params[:id])
       render json: Todo.find(params[:id])
-
-    rescue ActiveRecord::RecordNotFound => error
-      render json: { error: error.message }, status: 404
-
-    rescue StandardError => error
-      render json: { error: error.message }, status: 422
-    end
+    else
+      render json: { message: "todo not found" }, status: 404
   end
 
   def create
@@ -29,11 +24,18 @@ class TodosController < ApplicationController
       Todo.destroy(params[:id])
       render json: { message: "destroyed" }, status: 200
     else
-      render json: { message: "todo not found"}, status: 404
+      render json: { message: "todo not found" }, status: 404
     end
   end
 
-
+  def update
+    if Todo.exists?(params[:id])
+      Todo.update(params[:id], completed: true)
+      render json: Todo.find(params[:id])
+    else
+      render json: { message: "todo not found" }, status: 404
+    end
+  end
 
 
 end
