@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "todos", to: "todos#index"
   post "todos", to: "todos#create"
   delete "todos/:id", to: "todos#destroy"
+  put "todos/:id", to:"todos#update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
