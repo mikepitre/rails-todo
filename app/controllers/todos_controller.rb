@@ -13,6 +13,7 @@ class TodosController < ApplicationController
       render json: Todo.find(params[:id])
     else
       render json: { message: "todo not found" }, status: 404
+    end
   end
 
   def create
@@ -30,8 +31,8 @@ class TodosController < ApplicationController
 
   def update
     if Todo.exists?(params[:id])
-      Todo.update(params[:id], completed: true)
-      render json: Todo.find(params[:id])
+      updated_todo = Todo.update(params[:id], completed: params[:completed])
+      render json: updated_todo
     else
       render json: { message: "todo not found" }, status: 404
     end
