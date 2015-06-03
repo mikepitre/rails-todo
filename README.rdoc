@@ -1,28 +1,27 @@
-== README
+== Rails Todo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Version 4.2.1
 
-Things you may want to cover:
+Includes a todos table that can be accessed using the following URLs (all are rendered as JSON):
 
-* Ruby version
+* Going to http://localhost:3000/todos should display all the todos
 
-* System dependencies
+* Going to http://localhost:3000/todos/new should display an empty (new) todo
 
-* Configuration
+* Going to http://localhost:3000/todos/1 should display just that single todo
 
-* Database creation
+* Going to http://localhost:3000/todos/8989898 should display an error message
 
-* Database initialization
+* Sending a POST request to http://localhost:3000/todos with the params of { "body": "Finish Homework" } should return your updated todo (Using Postman)
 
-* How to run the test suite
+* Sending a DELETE request to http://localhost:3000/todos/1 should delete that todo from the database and return the message “deleted” (Using Postman)
 
-* Services (job queues, cache servers, search engines, etc.)
+PARAMS:
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+{
+id: null,
+body: null,
+completed: false,
+created_at: null,
+updated_at: null
+}
