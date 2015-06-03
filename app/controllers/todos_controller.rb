@@ -8,4 +8,8 @@ class TodosController < ApplicationController
     render json: Todo.new
   end
 
+  def show
+    render json: Todo.find(params[:id])
+  end
+
 end
