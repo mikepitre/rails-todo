@@ -1,4 +1,5 @@
-== Rails Todo
+Rails Todo
+================
 
 Rails Version 4.2.1
 
