@@ -18,10 +18,10 @@ Includes a todos table that can be accessed using the following URLs (all result
 
 PARAMS:
 
-{
-id: null,
-body: null,
-completed: false,
-created_at: null,
-updated_at: null
+{\
+id: null,\
+body: null,\
+completed: false,\
+created_at: null,\
+updated_at: null\
 }
