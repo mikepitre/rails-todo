@@ -2,7 +2,7 @@
 
 Rails Version 4.2.1
 
-Includes a todos table that can be accessed using the following URLs (all are rendered as JSON):
+Includes a todos table that can be accessed using the following URLs (all results are rendered as JSON):
 
 * Going to http://localhost:3000/todos should display all the todos
 
