@@ -1,7 +1,7 @@
 <h2>Todos (<%= todos.count %>):</h2>
 <ol>
   <% todos.each do |todo| %>
-   <li><%= todo.body + "." %> <%= link_to "view", controller: "todos", action: "show", id: todo.id %></li>
+   <li><%= todo.body + "." %> <%= link_to "view", controller: "todos", action: "show", id: todo.id %> | <%=link_to "delete", { action: "destroy", id: todo.id }, :method => "delete"%></li>
   <% end %>
 </ol>
 
