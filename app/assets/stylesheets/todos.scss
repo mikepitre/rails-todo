@@ -7,17 +7,24 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Nunito", sans-serif;
   background: #f4f7f8;
 }
 
 header {
   background: #e8eeef;
   text-align: center;
+  font-size: 1.5em;
+  padding-top: 20px;
+}
+
+li {
+  padding: 3px;
 }
 
 a {
   color: #5fcf80;
+  margin: 0 20px;
 }
 
 footer {
@@ -25,4 +32,5 @@ footer {
   text-align: center;
   height: 30px;
   line-height: 30px;
+  color: #5fcf80;
 }
