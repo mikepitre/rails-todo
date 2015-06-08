@@ -1,7 +1,7 @@
-
-  <ol>
-    <% todos.each do |todo| %>
-     <li><%= todo.body %></li>
-    <% end %>
-  </ol>
+<h2>Todos (<%= todos.count %>):</h2>
+<ol>
+  <% todos.each do |todo| %>
+   <li><%= todo.body + "." %> <%= link_to "view", controller: "todos", action: "show", id: todo.id %></li>
+  <% end %>
+</ol>
 

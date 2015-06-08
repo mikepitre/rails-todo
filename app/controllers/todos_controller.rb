@@ -18,9 +18,15 @@ class TodosController < ApplicationController
 
   def show
     if Todo.exists?(params[:id])
-      render json: Todo.find(params[:id])
-    else
-      render json: { message: "todo not found" }, status: 404
+      todo = Todo.find(params[:id])
+      respond_to do |format|
+        format.html do
+          render 'show.html.erb', locals: { show_todo: todo }
+        end
+        format.json do
+          render json: todo
+        end
+      end
     end
   end
 
