@@ -42,7 +42,7 @@ class TodosController < ApplicationController
           render 'destroy.html.erb', locals: { destroyed_todo: destroyed }
         end
         format.json do
-          render json: todo
+          render json: destroyed
         end
       end
     end
@@ -51,7 +51,14 @@ class TodosController < ApplicationController
   def update
     if Todo.exists?(params[:id])
       updated_todo = Todo.update(params[:id], completed: params[:completed])
-      render json: updated_todo
+      respond_to do |format|
+        format.html do
+          render 'update.html.erb', locals: { completed_todo: updated_todo }
+        end
+        format.json do
+          render json: updated_todo
+        end
+      end
     else
       render json: { message: "todo not found" }, status: 404
     end

@@ -1,7 +1,12 @@
 <h2>Todos (<%= todos.count %>):</h2>
 <ol>
   <% todos.each do |todo| %>
-   <li><%= todo.body + "." %> <%= link_to "view", controller: "todos", action: "show", id: todo.id %> | <%=link_to "delete", { action: "destroy", id: todo.id }, :method => "delete"%></li>
+    <li>
+      <%= todo.body + "." %>
+      <%= link_to "view", controller: "todos", action: "show", id: todo.id %> |
+      <%= link_to "delete", { action: "destroy", id: todo.id }, method: "delete"%> |
+      <%= link_to "mark complete", { action: "update", id: todo.id }, method: "put"%>
+    </li>
   <% end %>
 </ol>
 
